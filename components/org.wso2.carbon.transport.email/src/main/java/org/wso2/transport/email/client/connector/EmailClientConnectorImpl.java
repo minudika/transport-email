@@ -93,7 +93,7 @@ public class EmailClientConnectorImpl implements EmailClientConnector {
         //mail server properties start with mail.smtp. Get them from properties map and put into serverProperties
         try {
             properties.forEach((key, value) -> {
-                if (key.startsWith("mail.smtp")) {
+                if (key.startsWith("mail.smtp") || key.startsWith("mail.store")) {
                     serverProperties.put(key, value);
                 }
             });
